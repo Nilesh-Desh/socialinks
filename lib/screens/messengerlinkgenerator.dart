@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:sociallinks/screens/homescreen.dart';
 
-class WhatsappLinkGenerator extends StatefulWidget {
+import 'homescreen.dart';
+
+class MessengerLinkGenerator extends StatefulWidget {
   @override
-  _WhatsappLinkGeneratorState createState() => _WhatsappLinkGeneratorState();
+  _MessengerLinkGeneratorState createState() => _MessengerLinkGeneratorState();
 }
 
-class _WhatsappLinkGeneratorState extends State<WhatsappLinkGenerator> {
+class _MessengerLinkGeneratorState extends State<MessengerLinkGenerator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,53 +20,27 @@ class _WhatsappLinkGeneratorState extends State<WhatsappLinkGenerator> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image(
-                      height: 40,
-                      image: AssetImage('images/whatsappgreen.png')),
-                  Text("Whatspp Link Generator",
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.w900))
+                    height: 40,
+                    image: AssetImage('images/messenger.png'),
+                    color: Colors.blue,
+                  ),
+                  Text(
+                    "Messengr Link Generator",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+                  ),
                 ],
               ),
             ),
             Container(
               height: 600,
               decoration: BoxDecoration(
-                color: Colors.green[400],
+                color: Colors.blue[400],
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(70)),
               ),
               child: Column(
                 children: [
                   Container(
                     margin: EdgeInsets.only(top: 50, left: 25, right: 25),
-                    height: 70,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image(
-                          height: 30,
-                          image: AssetImage('images/flagindia.png'),
-                        ),
-                        Text('+91'),
-                        Container(
-                          width: 190,
-                          child: TextField(
-                            decoration: InputDecoration(
-                                hintText: "Enter Number",
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(width: 1))),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 40, left: 25, right: 25),
                     height: 250,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -79,7 +53,7 @@ class _WhatsappLinkGeneratorState extends State<WhatsappLinkGenerator> {
                         Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Text(
-                            'Chat Message',
+                            'Facebook Page Name',
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w500),
                           ),
@@ -168,7 +142,7 @@ class _WhatsappLinkGeneratorState extends State<WhatsappLinkGenerator> {
                       },
                       child: CircleAvatar(
                         radius: 15,
-                        backgroundColor: Colors.green,
+                        backgroundColor: Colors.blue,
                         child: Icon(
                           Icons.arrow_back,
                           color: Colors.white,

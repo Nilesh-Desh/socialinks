@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:sociallinks/screens/messengerlinkgenerator.dart';
 import 'package:sociallinks/screens/whatsapplinkgenerator.dart';
+import 'package:sociallinks/widget/boxcontainer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,104 +28,63 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 50,
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: <Color>[
-                                Color(0xffee0000),
-                                Color(0xffeeee00)
-                              ]),
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: <Color>[
+                              Color(0xffee0000),
+                              Color(0xffeeee00)
+                            ],
+                          ),
                           borderRadius: BorderRadius.circular(5.0),
                           color: Colors.orange),
-                      child: Image(image: AssetImage('images/chain.png')),
+                      child: Image(
+                        image: AssetImage('images/chain.png'),
+                      ),
                     ),
                   ],
                 ),
-                Text("Social Links App",
-                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w900))
+                Text(
+                  "Social Links App",
+                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.w900),
+                )
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => WhatsappLinkGenerator()));
-                  },
-                  child: Container(
-                      margin: EdgeInsets.symmetric(vertical: 15),
-                      height: 170,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.green[400],
-                              offset: const Offset(
-                                5.0,
-                                5.0,
-                              ),
-                              blurRadius: 20.0,
-                              spreadRadius: 2.0,
-                            ),
-                          ],
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.green[400]),
-                      child: Image(
-                        image: AssetImage("images/whatsapp.png"),
-                      )),
+          Column(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WhatsappLinkGenerator(),
+                    ),
+                  );
+                },
+                child: BoxContainer(
+                  color: Colors.green[400],
+                  imageName: 'whatsapp.png',
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 15),
-                  height: 170,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.blue,
-                          offset: const Offset(
-                            5.0,
-                            5.0,
-                          ),
-                          blurRadius: 20.0,
-                          spreadRadius: 2.0,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.blue),
-                  child: Image(
-                    image: AssetImage("images/messenger.png"),
-                  ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MessengerLinkGenerator(),
+                    ),
+                  );
+                },
+                child: BoxContainer(
+                  color: Colors.blue,
+                  imageName: 'messenger.png',
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 15),
-                  height: 170,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.orange[300],
-                          offset: const Offset(
-                            5.0,
-                            5.0,
-                          ),
-                          blurRadius: 20.0,
-                          spreadRadius: 2.0,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.orange[300]),
-                  child: Icon(
-                    Icons.mail,
-                    size: 60,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
+              ),
+              BoxContainer(
+                color: Colors.orange[300],
+                imageName: 'url.png',
+              ),
+            ],
           ),
         ],
       ),
@@ -137,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
             alignment: Alignment.center,
             children: [
               Positioned(
-                top: -20,
+                top: -30,
                 child: Container(
                   width: 110,
                   height: 50,
@@ -163,11 +124,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         size: 25,
                         color: Colors.white,
                       ),
-                      Text('Invite',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600)),
+                      Text(
+                        'Invite',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600),
+                      ),
                     ],
                   ),
                 ),
